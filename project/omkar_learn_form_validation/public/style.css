@@ -1,0 +1,348 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins";
+}
+
+/* header start  */
+
+.nav {
+  width: 200px;
+  /* background-color: #4eadd2 */
+}
+
+.nav img {
+  width: 100%;
+}
+
+/* tablet device */
+@media (min-width: 500px) and (max-width: 890px) {
+  .nav img {
+    width: 70%;
+  }
+}
+
+/* mobile device */
+@media (min-width: 300px) and (max-width: 490px) {
+  .nav img {
+    width: 50%;
+  }
+}
+
+/* header end  */
+
+/* hero section start  */
+
+.hero-container {
+  padding: 40px 0;
+}
+
+.hero-box h1 {
+  font-family: "Josefin Sans";
+  font-size: 80px;
+  font-weight: 900;
+  color: #245e81;
+}
+
+.hero-box h3 {
+  font-family: "Josefin Sans";
+  font-size: 40px;
+  color: #4eadd2;
+  margin-top: -20px;
+}
+
+.hero-image img {
+  width: 100%;
+}
+
+/* small laptop  */
+@media (min-width: 900px) and (max-width: 1200px) {
+  .hero-box {
+    width: 600px;
+  }
+
+  .hero-box h1 {
+    font-size: 60px;
+  }
+
+  .hero-box h3 {
+    font-size: 30px;
+    margin-top: -20px;
+  }
+}
+
+/* tablet device */
+@media (min-width: 500px) and (max-width: 890px) {
+  .hero-box {
+    width: 500px;
+    padding-left: 20px;
+  }
+
+  .hero-box h1 {
+    font-size: 40px;
+  }
+
+  .hero-box h3 {
+    font-size: 20px;
+    /* margin-top: -10px; */
+  }
+}
+
+/* mobile device */
+@media (min-width: 300px) and (max-width: 490px) {
+  .hero-container {
+    padding: 20px 0;
+  }
+
+  .hero-box {
+    width: 450px;
+    padding-left: 20px;
+  }
+
+  .hero-box h1 {
+    font-size: 14px;
+  }
+
+  .hero-box h3 {
+    font-size: 8px;
+    margin-top: -12px;
+  }
+}
+
+/* hero section end  */
+
+/* most popular section start */
+
+.popular-container {
+  background-color: #f1f6ff;
+  padding: 20px;
+  text-align: center;
+}
+
+.box-content h2 {
+  font-size: 30px;
+  font-family: poppins;
+  font-weight: 700;
+  margin-top: 20px;
+  color: #1e6592;
+}
+
+.box-content p {
+  font-family: Montserrat;
+  margin: 10px;
+  color: #757575;
+}
+
+/* tablet device */
+@media (min-width: 500px) and (max-width: 890px) {
+  .box-content h2 {
+    font-size: 24px;
+  }
+}
+
+/* mobile device */
+@media (min-width: 300px) and (max-width: 490px) {
+  .box-content h2 {
+    font-size: 20px;
+    margin-top: 0;
+  }
+
+  .box-content p {
+    font-size: 10px;
+  }
+}
+
+/* most popular section end */
+
+/* card section start  */
+
+.card-box {
+  margin: 100px 0;
+  padding: 0px;
+  gap: 45px;
+  flex-wrap: wrap;
+}
+
+/******************************************************** flip card start ********************************************************/
+
+.flip-card {
+  background-color: transparent;
+  width: 350px;
+  height: 450px;
+  /* border: 1px solid #f1f1f1; */
+  perspective: 1000px;
+  /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+  filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.1));
+}
+
+/* Style the front side (fallback if image is missing) */
+
+.reward {
+  background: linear-gradient(rgba(255, 255, 255, 0) 20%, rgb(2, 33, 64)),
+    url(images/reward-bg.png);
+}
+.reward-back {
+  background: linear-gradient(
+      rgba(247, 247, 247, 0.7),
+      rgba(247, 247, 247, 0.7)
+    ),
+    url(images/reward-bg.png);
+}
+
+.shopping {
+  background: linear-gradient(rgba(255, 255, 255, 0) 20%, rgb(2, 33, 64)),
+    url(images/shopping-bg.png);
+}
+.shopping-back {
+  background: linear-gradient(
+      rgba(247, 247, 247, 0.7),
+      rgba(247, 247, 247, 0.7)
+    ),
+    url(images/shopping-bg.png);
+}
+
+.petrol {
+  background: linear-gradient(rgba(255, 255, 255, 0) 20%, rgb(2, 33, 64)),
+    url(images/petrol-bg.png);
+}
+.petrol-back {
+  background: linear-gradient(
+      rgba(247, 247, 247, 0.7),
+      rgba(247, 247, 247, 0.7)
+    ),
+    url(images/petrol-bg.png);
+}
+
+.hotel {
+  background: linear-gradient(rgba(255, 255, 255, 0) 20%, rgb(2, 33, 64)),
+    url(images/hotel-bg.png);
+}
+.hotel-back {
+  background: linear-gradient(
+      rgba(247, 247, 247, 0.7),
+      rgba(247, 247, 247, 0.7)
+    ),
+    url(images/hotel-bg.png);
+}
+
+.lounge {
+  background: linear-gradient(rgba(255, 255, 255, 0) 20%, rgb(2, 33, 64)),
+    url(images/lounge-access-bg.png);
+}
+.lounge-back {
+  background: linear-gradient(
+      rgba(247, 247, 247, 0.7),
+      rgba(247, 247, 247, 0.7)
+    ),
+    url(images/lounge-access-bg.png);
+}
+
+.movie {
+  background: linear-gradient(rgba(255, 255, 255, 0) 20%, rgb(2, 33, 64)),
+    url(images/movies-bg.png);
+}
+.movie-back {
+  background: linear-gradient(
+      rgba(247, 247, 247, 0.7),
+      rgba(247, 247, 247, 0.7)
+    ),
+    url(images/movies-bg.png);
+}
+
+.flip-card-front img {
+  width: 50%;
+  margin-top: 40px;
+}
+.flip-card-front h1 {
+  font-family: "Josefin Sans";
+  color: #fff;
+  padding: 100px 20px 0 20px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.flip-card-front a {
+  text-decoration: none;
+  color: #00ff3c;
+  font-weight: bold;
+}
+
+/* Style the back side */
+.flip-card-back {
+  color: white;
+  transform: rotateY(180deg);
+}
+.flip-card-back h2 {
+  font-family: "Josefin Sans";
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin-top: 40px;
+  color: #0b0b0b;
+}
+
+.flip-card-back img {
+  width: 90%;
+  padding: 0 20px;
+  margin-top: 40px;
+  /* background-color: #fff; */
+  filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.7));
+  border-radius: 20px;
+}
+.flip-card-back button {
+  width: 80%;
+  padding: 15px;
+  margin-top: 40px;
+  outline: none;
+  background-color: #4eadd2;
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  transition: 0.5s;
+}
+.flip-card-back button:hover {
+  background-color: #1f789b;
+  filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.3));
+}
+
+.flip-card-back a {
+  text-decoration: none;
+}
+
+/****************************************************** flip card end ******************************************************/
+
+/* card section end  */
+
+footer {
+  background-color: #4eadd2;
+  height: 60px;
+}

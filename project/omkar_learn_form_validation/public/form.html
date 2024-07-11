@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="16x16"
+    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAgZJREFUWEftl19LFFEYxn/vjLsoCQlF2K6uYNYXKG/6CHklFURZ4G3QVdS1BkkU0mXZjUWin0AM6qqgP1cFStEfwTaFjdYcTQd3ndkTZwqL9rgzi0Nrsedy5pzzPuc97/Oc9xGAzOmBTmXLNaBXoEF/2+4oKcWetjSd3d2IyJ/bfRNkyG1suintpwZSkpQ7KHq2G/T39SEAUCIrgn9JMn2D1xEuAtbfBPAjlryRzNnBOaAjzuB6r7AM/IznaQAeYNcIABqAMgVPNNicP3aUrvReSiXjFCNmyxJef8wxMvWM3anUVkW4udYIoAQ0JxPcv3yGI4cyVSfn8fQs/cMTNO9v5YCZBf8ggKVVl9EHL3DWXIQyXv86kQjzeYdHr97Tko7xCvSmx6+Mkv3iINbWAAJyCVgilYSo+itYyDucvHqXbH4Zu1zZyuokIg3NLDAVYR3ADsnAPT7lnaDAwkbsNeCuF3kyM4tb2DCTUKBQ9Lg1+ZQPucVgToXnuHoWhJ1Y/19bL3LuxhjP32bjp2HNAURRwg3f5+HLd+Sc1QBvrFcQVQlty0ILZexFuENoWJfiegb+0wwY2/KmZILbF05w+GA7SsHC4jL9w+PMf12JvSExGhP94nXsa2FXYxIUFDyfuc9LaLWLMiIKkVfRmvlKBacP+jztXkJ6wWq84aY1q7k51Uhqac+/AzXsusZMK+AIAAAAAElFTkSuQmCC" />
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAgZJREFUWEftl19LFFEYxn/vjLsoCQlF2K6uYNYXKG/6CHklFURZ4G3QVdS1BkkU0mXZjUWin0AM6qqgP1cFStEfwTaFjdYcTQd3ndkTZwqL9rgzi0Nrsedy5pzzPuc97/Oc9xGAzOmBTmXLNaBXoEF/2+4oKcWetjSd3d2IyJ/bfRNkyG1suintpwZSkpQ7KHq2G/T39SEAUCIrgn9JMn2D1xEuAtbfBPAjlryRzNnBOaAjzuB6r7AM/IznaQAeYNcIABqAMgVPNNicP3aUrvReSiXjFCNmyxJef8wxMvWM3anUVkW4udYIoAQ0JxPcv3yGI4cyVSfn8fQs/cMTNO9v5YCZBf8ggKVVl9EHL3DWXIQyXv86kQjzeYdHr97Tko7xCvSmx6+Mkv3iINbWAAJyCVgilYSo+itYyDucvHqXbH4Zu1zZyuokIg3NLDAVYR3ADsnAPT7lnaDAwkbsNeCuF3kyM4tb2DCTUKBQ9Lg1+ZQPucVgToXnuHoWhJ1Y/19bL3LuxhjP32bjp2HNAURRwg3f5+HLd+Sc1QBvrFcQVQlty0ILZexFuENoWJfiegb+0wwY2/KmZILbF05w+GA7SsHC4jL9w+PMf12JvSExGhP94nXsa2FXYxIUFDyfuc9LaLWLMiIKkVfRmvlKBacP+jztXkJ6wWq84aY1q7k51Uhqac+/AzXsusZMK+AIAAAAAElFTkSuQmCC" />
+  <link rel="apple-touch-icon" sizes="120x120" href="https://www.fincash.com/assets/icon/apple-touch-icon.png" />
+  <link rel="mask-icon" href="https://www.fincash.com/assets/icon/safari-pinned-tab.svg" color="#5bbad5" />
+  <link rel="shortcut icon"
+    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAgZJREFUWEftl19LFFEYxn/vjLsoCQlF2K6uYNYXKG/6CHklFURZ4G3QVdS1BkkU0mXZjUWin0AM6qqgP1cFStEfwTaFjdYcTQd3ndkTZwqL9rgzi0Nrsedy5pzzPuc97/Oc9xGAzOmBTmXLNaBXoEF/2+4oKcWetjSd3d2IyJ/bfRNkyG1suintpwZSkpQ7KHq2G/T39SEAUCIrgn9JMn2D1xEuAtbfBPAjlryRzNnBOaAjzuB6r7AM/IznaQAeYNcIABqAMgVPNNicP3aUrvReSiXjFCNmyxJef8wxMvWM3anUVkW4udYIoAQ0JxPcv3yGI4cyVSfn8fQs/cMTNO9v5YCZBf8ggKVVl9EHL3DWXIQyXv86kQjzeYdHr97Tko7xCvSmx6+Mkv3iINbWAAJyCVgilYSo+itYyDucvHqXbH4Zu1zZyuokIg3NLDAVYR3ADsnAPT7lnaDAwkbsNeCuF3kyM4tb2DCTUKBQ9Lg1+ZQPucVgToXnuHoWhJ1Y/19bL3LuxhjP32bjp2HNAURRwg3f5+HLd+Sc1QBvrFcQVQlty0ILZexFuENoWJfiegb+0wwY2/KmZILbF05w+GA7SsHC4jL9w+PMf12JvSExGhP94nXsa2FXYxIUFDyfuc9LaLWLMiIKkVfRmvlKBacP+jztXkJ6wWq84aY1q7k51Uhqac+/AzXsusZMK+AIAAAAAElFTkSuQmCC"
+    type="image/png" />
+
+  <link rel="stylesheet" href="./form.css" />
+
+  <!-- font link  -->
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Josefin Sans" rel="stylesheet" />
+
+  <!-- bootstrap CSS link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+  <title>form</title>
+</head>
+
+<body>
+  <header class="nav-container container-fluid p-3">
+    <div class="nav">
+      <a href="https://www.fincash.com/"><img src="images/logo.png" alt="fincash_logo" /></a>
+    </div>
+  </header>
+
+  <section class="container-lg">
+    <div class="form-header container-lg"></div>
+    <div class="first-form-container container-sm d-flex justify-content-center">
+      <!-- form 1 step -->
+      <form id="" action="/submitForm" class="d-flex align-items-center justify-content-evenly" method="POST">
+        <!-- <div class="input-box">
+            <input  type="text" name="firstname" id="firstname" placeholder=""/>
+            <label for="firstname">First Name </label>
+            <span id="firstname-error" class="error-message"></span>
+          </div>
+
+          <div class="input-box">
+            <input type="text" name="lastname" id="lastname" placeholder="" />
+            <label for="lastname">Last Name </label>
+            <span id="lastname-error" class="error-message"></span>
+          </div>
+
+          <div class="input-box">
+            <input
+              
+              type="email"
+              name="email"
+              id="email"
+              placeholder=""
+            />
+            <label for="email">Email </label>
+            <span id="email-error" class="error-message"></span>
+          </div> -->
+
+        <div class="input-box">
+          <input type="text" name="number" id="number" placeholder="" />
+          <label for="number">Mobile No </label>
+          <span id="number-error" class="error-message"></span>
+        </div>
+
+        <!-- <div class="input-box">
+            <input type="text" name="otp" id="otp" placeholder="" />
+            <label for="otp">Enter OTP </label>
+            <p id="otp-sent-message">OTP Sent! <span id="timer"></span></p>
+            <br />
+            <button type="submit" id="generateotpbtn" class="otpbtn">
+              Generate OTP
+            </button>
+            <button type="submit" id="submitotpbtn" class="otpbtn">
+              Submit OTP
+            </button>
+          </div> -->
+        <!-- <div class="input-box">
+            <input  type="date" name="dob" id="dob" />
+            <label for="name">Date of Birth: </label>
+            <span id="dob-error" class="error-message"></span>
+          </div>
+          <div
+            class="radio-contaniner d-flex align-items-center justify-content-evenly"
+          >
+            <div class="radio-box">
+              <label class="radiobtn" for="">Marital Status:</label> <br />
+              <input
+                
+                type="radio"
+                name="maritalstatus"
+                value="Married"
+                id="married"
+              />
+              <span class="radio-text"> Married </span>
+              <input
+                
+                type="radio"
+                name="maritalstatus"
+                value="Unmarried"
+                id="unmarried"
+              />
+              <span class="radio-text"> Unmarried </span>
+              <span id="maritalstatus-error" class="error-message"></span>
+            </div>
+            <div class="radio-box">
+              <label class="radiobtn" for="">Gender:</label> <br />
+              <input
+                
+                type="radio"
+                name="gender"
+                value="Male"
+                id="male"
+              />
+              <span class="radio-text"> Male </span>
+              <input
+                
+                type="radio"
+                name="gender"
+                value="Female"
+                id="female"
+              />
+              <span class="radio-text"> Female </span>
+              <input
+                
+                type="radio"
+                name="gender"
+                value="Other"
+                id="other"
+              />
+              <span class="radio-text"> Other </span>
+              <span id="gender-error" class="error-message"></span> 
+            </div>
+          </div>
+
+          <div class="input-box">
+            <select name="occupation" id="occupation" >
+              <option value="Select Your Occupation">
+                Select Your Occupation
+              </option>
+              <option value="salaried">Salaried</option>
+              <option value="Business">Business</option>
+              <option value="Student">Student</option>
+            </select>
+            <label for="occupation">Occupation:</label>
+            <span id="occupation-error" class="error-message"></span>
+          </div>
+
+          <div class="input-box">
+            <select name="salary" id="salary" >
+              <option value="Select Your Salary">Select Your Salary</option>
+              <option value="Less than 25000">Less than 25,000</option>
+              <option value="25000 to 50,000">25000 to 50,000</option>
+              <option value="50,000 to 1,00,000">50,000 to 1,00,000</option>
+              <option value="1,00,000 Above">1,00,000 Above</option>
+            </select>
+            <label for="salary">Salary:</label>
+            <span id="salary-error" class="error-message"></span>
+            <br />
+          </div>
+
+          <div class="input-box">
+            <select name="education" id="education" >
+              <option value="Select Your education">
+                Select Your education
+              </option>
+              <option value="H.S.C">H.S.C</option>
+              <option value="Diploma">Diploma</option>
+              <option value="Degree">Degree</option>
+              <option value="Post Graduate">Post Graduate</option>
+              <option value="Other">Other</option>
+            </select>
+            <label for="education">Qualification:</label>
+            <div class="input-box">
+              <!-- <span id="submit-error"></span> -->
+        <!-- <button id="genrateotpbtn" class="otpbtn">Genrate OPT</button> -->
+        <button id="submitbtn" class="submitbtn">Get OTP</button>
+    </div>
+    </div>
+    </form>
+    </div>
+    <!-- 
+ <div class="form-header container-lg">
+        </div>-->
+    <div class="second-form-container container-sm d-flex justify-content-center">
+      <!-- <form
+          id="submitForm"
+          action="/submitForm"
+          method="POST"
+          class="d-flex align-items-center justify-content-evenly"
+        >
+          <div class="input-box">
+            <input  type="date" name="dob" id="dob" />
+            <label for="name">Date of Birth: </label>
+          </div>
+          <div
+            class="radio-contaniner d-flex align-items-center justify-content-evenly"
+          >
+            <div class="radio-box">
+              <label class="radiobtn" for="">Marital Status:</label> <br />
+              <input
+                
+                type="radio"
+                name="marital-status"
+                value="Married"
+                id="married"
+              />
+              <span class="radio-text"> Married </span>
+              <input
+                
+                type="radio"
+                name="marital-status"
+                value="Unmarried"
+                id="unmarried"
+              />
+              <span class="radio-text"> Unmarried </span>
+            </div>
+            <div class="radio-box">
+              <label class="radiobtn" for="">Gender:</label> <br />
+              <input
+                
+                type="radio"
+                name="gender"
+                value="Male"
+                id="male"
+              />
+              <span class="radio-text"> Male </span>
+              <input
+                
+                type="radio"
+                name="gender"
+                value="Female"
+                id="female"
+              />
+              <span class="radio-text"> Female </span>
+              <input
+                
+                type="radio"
+                name="gender"
+                value="Other"
+                id="other"
+              />
+              <span class="radio-text"> Other </span>
+            </div>
+          </div>
+
+          <div class="input-box">
+            <select name="occupation" id="occupation" >
+              <option value="Select Your Occupation">
+                Select Your Occupation
+              </option>
+              <option value="salaried">Salaried</option>
+              <option value="Business">Business</option>
+              <option value="Student">Student</option>
+            </select>
+            <label for="occupation">Occupation:</label>
+          </div>
+
+          <div class="input-box">
+            <select name="salary" id="salary" >
+              <option value="Select Your Salary">Select Your Salary</option>
+              <option value="Less than 25000">Less than 25,000</option>
+              <option value="25000 to 50,000">25000 to 50,000</option>
+              <option value="50,000 to 1,00,000">50,000 to 1,00,000</option>
+              <option value="1,00,000 Above">1,00,000 Above</option>
+            </select>
+            <label for="salary">Salary:</label>
+            <br />
+          </div>
+
+          <div class="input-box">
+            <select name="education" id="education" >
+              <option value="Select Your education">
+                Select Your education
+              </option>
+              <option value="H.S.C">H.S.C</option>
+              <option value="Diploma">Diploma</option>
+              <option value="Degree">Degree</option>
+              <option value="Post Graduate">Post Graduate</option>
+              <option value="Other">Other</option>
+            </select>
+            <label for="education">Qualification:</label>
+            <div class="input-box"> -->
+      <!-- <span id="submit-error"></span> -->
+      <!-- <button id="genrateotpbtn" class="otpbtn">Genrate OPT</button> -->
+      <!-- <button id="submitbtn" class="submitbtn">SUBMIT</button>
+            </div>
+          </div>
+        </form> -->
+    </div>
+  </section>
+</body>
+
+<script src="./script.js"></script>
+<script src="./form.js"></script>
+<!-- bootstrap JS link -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCdIeybk8Xf-1DQ3t2AVyeH9t6xjHrsvns",
+    authDomain: "html-mongo-card.firebaseapp.com",
+    projectId: "html-mongo-card",
+    storageBucket: "html-mongo-card.appspot.com",
+    messagingSenderId: "262290972229",
+    appId: "1:262290972229:web:75482fda6bfb1bf5b50d2c",
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+
+</html>

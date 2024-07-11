@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans";
+}
+
+.nav-container {
+  /* background-color: #F1F6FF; */
+}
+
+.nav {
+  width: 200px;
+  /* background-color: #4eadd2 */
+}
+
+.nav img {
+  width: 100%;
+}
+#otp-sent-message {
+  display: none;
+  color: #4749ca;
+}
+#firstname-error,
+#email-error,
+#phone-error,
+#submit-error {
+  display: none;
+  color: #4749ca;
+}
+/* tablet device */
+@media (min-width: 500px) and (max-width: 890px) {
+  .nav img {
+    width: 70%;
+  }
+}
+
+/* mobile device */
+@media (min-width: 300px) and (max-width: 490px) {
+  .nav img {
+    width: 50%;
+  }
+}
+
+/* header end  */
+
+.form-header {
+  background-color: #c0c0c0;
+  height: 60px;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+.first-form-container,
+.second-form-container {
+  background-color: #fafafa;
+}
+
+form {
+  flex-wrap: wrap;
+  padding: 40px;
+  /* background-color: #F1F6FF; */
+}
+
+.input-box {
+  position: relative;
+  margin: 20px;
+}
+
+.input-box label {
+  position: absolute;
+  top: -11px;
+  left: 30px;
+  padding: 3px 10px;
+  font-size: 17px;
+  font-weight: 700;
+  text-shadow: 1px 1px 5px rgb(0, 30, 255, 0.3);
+  background-color: #fafafa;
+}
+
+.input-box input,
+.input-box select {
+  width: 450px;
+  padding: 14px 7px;
+  margin: 5px;
+  font-size: 17px;
+  font-weight: 400;
+  background-color: transparent;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid #738cba;
+  filter: drop-shadow(1px 1px 2px rgb(0, 30, 255, 0.3));
+}
+
+.input-box .otpbtn {
+  margin-top: 20px;
+  padding: 7px 10px;
+  font-size: 17px;
+  font-weight: 500;
+  /* background: rgb(212, 212, 212); */
+  border: none;
+  border-radius: 5px;
+  /* appearance: none; */
+  outline: none;
+  transition: 0.5s;
+  background-color: #b0ccff;
+}
+
+.input-box .otpbtn:hover {
+  background-color: #4749ca;
+  color: #f1f6ff;
+}
+
+#submitotpbtn {
+  margin-left: 20px;
+}
+
+/* small laptop device */
+@media (min-width: 900px) and (max-width: 1200px) {
+  .input-box input {
+    width: 350px;
+  }
+}
+
+/* tablet device */
+@media (min-width: 500px) and (max-width: 890px) {
+  .input-box input {
+    width: 270px;
+  }
+
+  .input-box {
+    margin: 10px;
+  }
+}
+
+/* mobile device */
+@media (min-width: 300px) and (max-width: 490px) {
+  .input-box input {
+    width: 270px;
+  }
+
+  form {
+    padding: 0px;
+  }
+}
+
+/* form 2  */
+
+.input-box select {
+  width: 350px;
+}
+
+#otp {
+  width: 230px;
+}
+
+.radio-box {
+  margin-left: 40px;
+}
+
+.radiobtn {
+  padding: 3px 10px;
+  font-size: 17px;
+  font-weight: 700;
+  text-shadow: 1px 1px 5px rgb(0, 30, 255, 0.3);
+  background-color: #fafafa;
+}
+
+.radio-text {
+  font-size: 17px;
+  font-weight: 600;
+  padding: 2px 7px;
+}
+
+#dob {
+  width: 270px;
+}
+
+.submitbtn {
+  width: 270px;
+  margin-top: 20px;
+  padding: 10px 10px;
+  font-size: 20px;
+  font-weight: 700;
+  /* background: rgb(212, 212, 212); */
+  border: none;
+  border-radius: 10px;
+  /* appearance: none; */
+  outline: none;
+  transition: 0.5s;
+  background-color: #b0ccff;
+}
+
+.submitbtn:hover {
+  background-color: #4749ca;
+  color: #f1f6ff;
+}
+.error-message {
+  color: red;
+  font-size: 0.875em;
+  margin-top: 0.5em;
+}
+
+/* small laptop device */
+@media (min-width: 900px) and (max-width: 1200px) {
+  .radio-box {
+    margin-left: 20px;
+  }
+}
+
+/* tablet device */
+@media (min-width: 500px) and (max-width: 890px) {
+  .radio-box {
+    margin-left: 40px;
+  }
+
+  .input-box select {
+    width: 250px;
+  }
+}
+
+
+
+/* mobile device */
+@media (min-width: 300px) and (max-width: 490px) {
+  .input-box select {
+    width: 270px;
+  }
+
+  .radio-contaniner {
+    flex-wrap: wrap;
+    text-align: left;
+  }
+  .radio-box {
+    margin-left: 0px;
+  }
+
+  form {
+    padding: 0px;
+  }
+}
