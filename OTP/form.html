@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Generator</title>
+    <link rel="stylesheet" href="./public/style.css" />
+    <script src="form.js"></script>
+    <script src="form2.js"></script>
+   
+</head>
+<body>
+    <form action="/getotp" method="POST">
+        <div class="input-box">
+            <input type="text" name="number" id="number" placeholder="" />
+            <label for="number">Mobile No </label>
+            <span id="number-error" class="error-message"></span>
+        </div>
+        <div>
+            <button id="getOtpBtn" class="submitbtn">Get OTP</button>
+        </div>
+    </form acton="/submitotp" method="POST">
+    <form>
+        <div class="input-box">
+            <input type="text" name="otp" id="otp" placeholder="" />
+            <label for="otp">Enter OTP </label>
+            <span id="otp-error" class="error-message"></span>
+        </div>
+        <div>
+            <button id="submitbtn" class="submitbtn">Submit OTP</button>
+        </div>
+    </form>
+</body>
+</html>

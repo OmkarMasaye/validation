@@ -181,9 +181,19 @@
             <div class="input-box">
               <!-- <span id="submit-error"></span> -->
         <!-- <button id="genrateotpbtn" class="otpbtn">Genrate OPT</button> -->
-        <button id="submitbtn" class="submitbtn">Get OTP</button>
+        <button id="getOtpbtn" class="submitbtn">Get OTP</button>
+        <div class="input-box">
+          <input type="text" name="otp" id="otp" placeholder="" />
+          <label for="otp">Enter OTP </label>
+          <span id="otp-error" class="error-message"></span>
+           </div>
+          <div>
+            <button id="submitbtn" class="submitbtn">Get OTP</button>
+          </div>
     </div>
     </div>
+       
+
     </form>
     </div>
     <!-- 
@@ -296,6 +306,19 @@
         </form> -->
     </div>
   </section>
+
+  <script>
+    document.getElementById('getOtpBtn').addEventListener('click', function() {
+        // Generate a 4-digit OTP
+        const otp = Math.floor(1000 + Math.random() * 9000);
+
+        // Display the OTP in an alert (you can change this as needed)
+        alert('Your OTP is: ' + otp);
+
+        // Populate the OTP input field
+        document.getElementById('otp').value = otp;
+    });
+</script>
 </body>
 
 <script src="./script.js"></script>
