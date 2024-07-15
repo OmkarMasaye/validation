@@ -7,7 +7,13 @@ const mobileschema = new mongoose.Schema({
     },
     otp:{
         type:Number
-    }
+    },
+    otpExpiry:{
+         type: Date,
+          required: true 
+    },
+    otpAttempts: [{ type: Date }],  
+    cooldownEnd: { type: Date } 
 })
 
 const Mobile = mongoose.model("Mobile", mobileschema)

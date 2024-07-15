@@ -60,6 +60,10 @@
   .submitbtn:hover {
     background-color: #3e8e41;
   }
+  .submitbtn:disabled {
+    background-color: #3e8e41;
+    cursor: not-allowed;
+  }
   
   /* Additional Styles */
   
